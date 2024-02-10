@@ -51,7 +51,7 @@ public class Policy
    {
       fName = userFName;
    }
-   public void setLame(String userLName)
+   public void setLName(String userLName)
    {
       lName = userLName;
    }
@@ -137,7 +137,7 @@ public class Policy
          if (smokingStatus.equals("smoker"))
          {
             if (getUserBMI() > 35.0)
-               policyCost = 600 + 100 + ((getUserBMI()-35) * 20);
+               policyCost = 600 + 100 + ((getUserBMI()-35.0) * 20);
             else
                policyCost = 600 + 100;
          }
@@ -145,7 +145,7 @@ public class Policy
          {
             if (getUserBMI() > 35.0)
             {
-               policyCost = 600 + ((getUserBMI() - 35 *20));
+               policyCost = 600 + ((getUserBMI() - 35.0) *20);
             }
             else
                policyCost = 600;

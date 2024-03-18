@@ -20,7 +20,7 @@ public class Policy
    /** constructor that initializes all fields to the arguments it is provided
    @Param userPolicyNumber, userAge, userFName, userLName, userSmokingStatus, userHeigh, userWeight
    */
-   public Policy(int userPolicyNumber, int userAge,String userProviderName, String userFName, String userLName, String userSmokingStatus, double userHeight, double userWeight)
+   public Policy(int userPolicyNumber, String userProviderName, String userFName, String userLName, int userAge, String userSmokingStatus, double userHeight, double userWeight)
    {
       policyNumber = userPolicyNumber;
       age = userAge;
@@ -115,14 +115,14 @@ public class Policy
       double policyCost = 0.00;
       if (age > 50)
       {
-         if (smokingStatus.equals("smoker"))
+         if (smokingStatus.equalsIgnoreCase("smoker"))
          {
             if (getUserBMI() > 35.0)
                policyCost = 600 + 75 + 100 + ((getUserBMI()-35) * 20);
             else
                policyCost = 600 + 75 + 100;
          }
-         else if (smokingStatus.equals("non-smoker"))
+         else if (smokingStatus.equalsIgnoreCase("non-smoker"))
          {
             if (getUserBMI() > 35.0)
             {
@@ -134,14 +134,14 @@ public class Policy
       }
       else if (age < 50)
       {
-         if (smokingStatus.equals("smoker"))
+         if (smokingStatus.equalsIgnoreCase("smoker"))
          {
             if (getUserBMI() > 35.0)
                policyCost = 600 + 100 + ((getUserBMI()-35.0) * 20);
             else
                policyCost = 600 + 100;
          }
-         else if (smokingStatus.equals("non-smoker"))
+         else if (smokingStatus.equalsIgnoreCase("non-smoker"))
          {
             if (getUserBMI() > 35.0)
             {
